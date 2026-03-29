@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div class="login-card">
+
+    <h1>🏦  Bank</h1>
+    <p class="subtitle">Safe • Fast • Reliable</p>
+
+    <form (ngSubmit)="onLogin()" #f="ngForm">
+
+      <div class="input-group">
+        <label>Username</label>
+        <input type="text" name="username" [(ngModel)]="username" required>
+      </div>
+
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" name="password" [(ngModel)]="password" required>
+      </div>
+
+      <button type="submit" [disabled]="f.invalid">Login</button>
+
+    </form>
+
+    <p class="error" *ngIf="errorMsg">{{errorMsg}}</p>
+
+    <div class="footer">
+      <p>© 2026 Secure Bank</p>
+    </div>
+
+  </div>
+
+</div>
